@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  /* Terminal colors */
+  --terminal-primary: #87FF00;
+  --terminal-text-shadow:rgba(135, 255, 0, 0.5);
+  --terminal-bg: #0a0a0a;
+  --terminal-dim: #444444;
+
+  /* Menu colors */
+  --menu-green: #00ff00;
+  --menu-blue: #00ccff;
+  --menu-orange: #ff9500;
+  --menu-yellow: #ffcc00;
 }
 
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+@theme {
+
+  --animate-terminal-cursor: cursor-blink 1s step-end infinite;
+
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 3px 100%;
 }
 
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+
+.animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
 }
