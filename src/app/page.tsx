@@ -40,7 +40,7 @@ export default function Home() {
       style={{ backgroundColor: "var(--terminal-bg)" }}>
       {/* Scanline effect */}
       <div className="scanline opacity-30" />
-      <div className="font-mono text-base sm:text-lg">
+      <div className="font-mono text-base sm:text-lg w-full max-w-2xl">
         {/* Bio Text with typing effect */}
         <TerminalBio text={bioText} onComplete={() => setShowMenu(true)} />
 

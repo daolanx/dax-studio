@@ -28,7 +28,8 @@ export function TerminalBio({ text, onComplete }: TerminalBioProps) {
       className="whitespace-pre-wrap text-xs sm:text-base md:text-lg"
       style={{
         color: "var(--terminal-primary)",
-        textShadow: "0 0 5px var(--terminal-text-shadow)"
+        textShadow: "0 0 5px var(--terminal-text-shadow)",
+        minWidth: "fit-content"
       }}
     >
       {displayedText}
