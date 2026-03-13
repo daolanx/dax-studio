@@ -1,63 +1,63 @@
-# Next.js Framework Starter
+# Dax Studio
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/next-starter-template)
+Personal portfolio website for Dax, a freelance frontend developer based in Hangzhou, China.
 
-<!-- dash-content-start -->
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/daolanx/dax-studio)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's deployed on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+Live: [https://www.daolanx.com](www.daolanx.com)
 
-This template uses [OpenNext](https://opennext.js.org/) via the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare), which works by taking the Next.js build output and transforming it, so that it can run in Cloudflare Workers.
+## Features
 
-<!-- dash-content-end -->
+- **LCARS Terminal Aesthetic** - Star Trek-inspired interface with authorization-style intro
+- **Typing Animation** - Natural typing effect with randomized delays to simulate human typing
+- **Keyboard Navigation** - Full keyboard support (arrow keys + enter) for menu navigation
+- **Responsive Design** - Adapts seamlessly across desktop and mobile devices
+- **Analytics** - Umami privacy-focused analytics integration
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+## Tech Stack
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/next-starter-template
-```
-
-A live public deployment of this template is available at [https://next-starter-template.templates.workers.dev](https://next-starter-template.templates.workers.dev)
+- **Framework**: Next.js 16 (App Router)
+- **Runtime**: Cloudflare Workers (via OpenNext adapter)
+- **Language**: TypeScript 5.9
+- **Styling**: Tailwind CSS 4
+- **Components**: React 19
 
 ## Getting Started
 
-First, run:
-
 ```bash
-npm install
-# or
-yarn install
-# or
+# Install dependencies
 pnpm install
-# or
-bun install
+
+# Start development server
+pnpm dev
 ```
 
-Then run the development server (using the package manager of your choice):
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-```bash
-npm run dev
+## Commands
+
+| Command       | Description                        |
+| :------------ | :--------------------------------- |
+| `pnpm dev`    | Start development server          |
+| `pnpm build`  | Build for production              |
+| `pnpm preview` | Preview build locally            |
+| `pnpm deploy` | Deploy to Cloudflare Workers      |
+| `pnpm lint`   | Run ESLint                        |
+| `pnpm check`  | Run build + TypeScript check      |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx       # Main homepage
+│   ├── layout.tsx    # Root layout
+│   └── globals.css   # Global styles
+└── components/
+    ├── TerminalBio.tsx   # Typing effect component
+    └── TerminalMenu.tsx  # Navigation menu
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Deploying To Production
-
-| Command                           | Action                                       |
-| :-------------------------------- | :------------------------------------------- |
-| `npm run build`                   | Build your production site                   |
-| `npm run preview`                 | Preview your build locally, before deploying |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare    |
-| `npm wrangler tail`               | View real-time logs for all Workers          |
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+MIT
