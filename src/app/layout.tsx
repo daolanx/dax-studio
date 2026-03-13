@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const viewport = {
@@ -46,6 +47,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="2008e087-18a7-43de-8901-4f580e9ddabc"
+        />
       </head>
       <body style={{ backgroundColor: "var(--terminal-bg)" }}>{children}</body>
     </html>
