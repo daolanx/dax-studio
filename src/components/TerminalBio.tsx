@@ -48,7 +48,7 @@ export function TerminalBio({ text, onComplete }: TerminalBioProps) {
 
   return (
     <pre
-      className="whitespace-pre-wrap text-xs sm:text-base md:text-lg"
+      className="whitespace-pre-wrap text-sm sm:text-lg md:text-xl"
       style={{
         color: "var(--terminal-primary)",
         textShadow: "0 0 5px var(--terminal-text-shadow)",

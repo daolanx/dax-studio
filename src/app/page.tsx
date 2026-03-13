@@ -40,7 +40,7 @@ export default function Home() {
       <div className="scanline-container">
         <div className="scanline-bar" />
       </div>
-      <div className="font-mono text-base sm:text-lg w-full max-w-2xl">
+      <div className="font-mono text-sm sm:text-xl md:text-2xl w-full max-w-2xl">
         {/* Bio Text with typing effect */}
         <TerminalBio text={bioText} onComplete={() => setShowMenu(true)} />
 

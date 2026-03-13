@@ -51,7 +51,7 @@ export function TerminalMenu({ items }: TerminalMenuProps) {
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <span
-            className="font-bold transition-all duration-150 text-xs sm:text-base md:text-lg"
+            className="font-bold transition-all duration-150 text-sm sm:text-lg md:text-xl"
             style={{
               color: isActive(index) ? item.color : "var(--terminal-dim)",
               textShadow: isActive(index)
