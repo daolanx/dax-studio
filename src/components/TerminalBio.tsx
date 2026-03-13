@@ -1,27 +1,50 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface TerminalBioProps {
   text: string;
   onComplete?: () => void;
 }
 
+function getTypingDelay(char: string): number {
+  const baseDelay = 15 + Math.random() * 20;
+
+  if (/[.!?]/.test(char)) {
+    return baseDelay + 100 + Math.random() * 80;
+  }
+
+  if (/[,;:]/.test(char)) {
+    return baseDelay + 60 + Math.random() * 40;
+  }
+
+  if (char === " ") {
+    return baseDelay + 15 + Math.random() * 20;
+  }
+
+  return baseDelay;
+}
+
 export function TerminalBio({ text, onComplete }: TerminalBioProps) {
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
 
-  useEffect(() => {
+  const typeNextChar = useCallback(() => {
     if (textIndex < text.length) {
+      const delay = getTypingDelay(text[textIndex]);
       const timeout = setTimeout(() => {
         setDisplayedText(text.slice(0, textIndex + 1));
         setTextIndex((prev) => prev + 1);
-      }, 25);
+      }, delay);
       return () => clearTimeout(timeout);
     } else if (onComplete) {
       onComplete();
     }
   }, [textIndex, text, onComplete]);
+
+  useEffect(() => {
+    return typeNextChar();
+  }, [typeNextChar]);
 
   return (
     <pre

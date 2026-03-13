@@ -6,15 +6,13 @@ import { TerminalMenu, type MenuItem } from "@/components/TerminalMenu";
 
 const bioText = `LCARS ACCESS TERMINAL 47.A
 ============================
-> AUTHORIZATION: GRANTED
 > IDENTITY: DAX
 > DESIGNATION: INDEPENDENT FRONTEND DEVELOPER
 > CORE DIRECTIVE: PROGRAMMING FOR INTRINSIC JOY & MEANING
-> STATUS: SYSTEMS OPERATIONAL
 > ---
 > WELCOME ABOARD, COMMANDER.
 > PLEASE SELECT YOUR DESTINATION.
- `;
+`;
 
 const menuItems: MenuItem[] = [
 
