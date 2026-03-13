@@ -37,7 +37,9 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
       style={{ backgroundColor: "var(--terminal-bg)" }}>
       {/* Scanline effect */}
-      <div className="scanline opacity-30" />
+      <div className="scanline-container">
+        <div className="scanline-bar" />
+      </div>
       <div className="font-mono text-base sm:text-lg w-full max-w-2xl">
         {/* Bio Text with typing effect */}
         <TerminalBio text={bioText} onComplete={() => setShowMenu(true)} />
